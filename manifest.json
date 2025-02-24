@@ -1,0 +1,22 @@
+// manifest.json
+{
+  "manifest_version": 3,
+  "name": "Duolingo Verb Conjugator",
+  "version": "1.0",
+  "description": "Right-click on a verb in Duolingo to see its French conjugations.",
+  "permissions": ["contextMenus", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["https://conjugator.reverso.net/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.duolingo.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}

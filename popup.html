@@ -1,0 +1,29 @@
+// popup.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Verb Conjugator</title>
+    <script src="popup.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+      #output {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Enter a verb:</h3>
+    <input type="text" id="verbInput" placeholder="Type a verb..." />
+    <button id="conjugateButton">Conjugate</button>
+    <div id="output"></div>
+  </body>
+</html>
+
+// popup.js document.getElementById("conjugateButton").addEventListener("click",
+function() { const verb = document.getElementById("verbInput").value.trim(); if
+(verb) { const queryUrl =
+`https://conjugator.reverso.net/conjugation-french-verb-${verb}.html`;
+window.open(queryUrl, "_blank"); } });
